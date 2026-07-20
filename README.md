@@ -42,7 +42,7 @@ client/
 ## Prerequisites
 
 - Node.js 18+
-- The `server` app running (see `../server/README.md`) — this client expects it at the URL in `VITE_API_BASE_URL`
+- The `server` app running (see `[Subscription Tracker repo](https://github.com/GJablo/subscription-service)`) — this client expects it at the URL in `VITE_API_BASE_URL`
 
 ## Installation
 
@@ -62,11 +62,3 @@ npm run dev      # start the dev server (http://localhost:5173)
 npm run build    # production build
 npm run preview  # preview the production build
 ```
-
-The backend must have CORS enabled for `http://localhost:5173` with credentials (already configured in `server/app.js`), since auth relies on an httpOnly cookie set cross-origin.
-
-## Notes on the API contract
-
-The backend's controllers return slightly inconsistent response shapes (`{ success, data }`, `{ message, data }`, or just `{ message }`). The axios response interceptor in `src/api/client.js` normalizes all of these to just the `data` payload, so hooks and components consume plain values.
-
-There is no `/me` endpoint, so `AuthContext` persists the signed-in user's id in `localStorage` and re-validates it against `GET /users/:id` on load — this both restores the session after a refresh and confirms the session cookie is still valid.
