@@ -42,7 +42,7 @@ client/
 ## Prerequisites
 
 - Node.js 18+
-- The `server` app running (see `[Subscription Tracker repo](https://github.com/GJablo/subscription-service)`) — this client expects it at the URL in `VITE_API_BASE_URL`
+- The `server` app running (see [Subscription Tracker repo](https://github.com/GJablo/subscription-service)) — this client expects it at the URL in `VITE_API_BASE_URL`
 
 ## Installation
 
